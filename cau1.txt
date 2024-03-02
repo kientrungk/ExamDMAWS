@@ -1,0 +1,26 @@
+Công nghệ:
+- C# ASP .NET
+- SQL Server
+- Entity Framework
+- RESTful API
+
+Lý do: 
+
+C# ASP.NET:
+    C# là một ngôn ngữ lập trình mạnh mẽ và linh hoạt, được hỗ trợ bởi Microsoft.
+    ASP.NET cung cấp một nền tảng mạnh mẽ cho việc phát triển các ứng dụng web.
+    Có một cộng đồng lớn và sự hỗ trợ chính thức từ Microsoft, giúp giảm thiểu rủi ro và cung cấp tài nguyên hữu ích cho nhà phát triển.
+
+SQL Server:
+    SQL Server là một hệ quản trị cơ sở dữ liệu quan hệ mạnh mẽ được phát triển bởi Microsoft.
+    Nó cung cấp hiệu suất tốt, tính tin cậy cao và khả năng mở rộng linh hoạt, phù hợp cho các dự án quy mô lớn.
+    SQL Server tích hợp tốt với các công nghệ Microsoft khác, giúp tối ưu hóa hiệu suất và khả năng tích hợp.
+
+Entity Framework:
+    Entity Framework là một ORM (Object-Relational Mapping) framework được xây dựng bởi Microsoft, giúp giảm thiểu việc viết mã và tăng tốc độ phát triển.
+    Nó cung cấp một cách tiếp cận dễ dàng và linh hoạt để tương tác với cơ sở dữ liệu, giúp giảm thiểu thời gian và công sức cần thiết cho các hoạt động liên quan đến dữ liệu.
+
+RESTful API:
+    RESTful API là một kiến trúc phổ biến cho việc xây dựng các dịch vụ web, cho phép tương tác giữa các ứng dụng thông qua giao thức HTTP.
+    Nó linh hoạt, dễ dàng sử dụng và hiệu quả cho việc phát triển các ứng dụng web và di động.
+    RESTful API tương thích tốt với các công nghệ và ngôn ngữ lập trình phổ biến khác, giúp tăng tính mở rộng và tính tương thích của hệ thống

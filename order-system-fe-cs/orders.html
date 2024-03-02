@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+                    border: 0.5px solid blue;
+                    border-collapse: collapse;
+                }
+        </style>
+    </head>
+    <body>
+        
+        <h2 style="color: blue; margin-left: 48px; margin-top: 20px;">THÔNG TIN ĐƠN HÀNG</h2>
+
+        <table id="mytable" style="border: 1px solid black; margin-left: 50px; margin-top: 20px;">
+            <thead style="background-color: rgb(255, 212, 127);">
+            <tr>
+                <th class="w-25 text-center" style="min-width: 100px;">ID</th>
+                <th class="w-15 text-center" style="min-width: 100px;">Item code</th>
+                <th class="w-15 text-center" style="min-width: 200px;">Item Name</th>
+                <th class="w-15 text-center" style="min-width: 200px;">Quantity</th>
+                <th class="w-15 text-center" style="min-width: 200px;">Delivery Time</th>
+                <th class="w-15 text-center" style="min-width: 200px;">Address</th>
+                <th class="w-15 text-center" style="min-width: 200px;">Phone number</th>
+            </tr>
+            </thead>
+    
+           
+        </table>
+
+        
+<script>
+
+    function myFunction() {
+        fetch("https://localhost:7158/api/Orders")
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                data.forEach(value => {
+                    console.log(value);
+
+
+                    const dataHtml = `
+                        <tr>
+                            <td>${value.id}</td>
+                            <td>${value.itemCode}</td>
+                            <td>${value.itemName}</td>
+                            <td>${value.itemQty}</td>
+                            <td>${value.orderDelivery}</td>
+                            <td>${value.orderAddress}</td>
+                            <td>${value.phoneNumber}</td>
+            
+                        </tr>
+                    `;
+
+                    document.getElementById('mytable').insertAdjacentHTML('beforeend', dataHtml);
+                });
+
+            })
+    }
+    myFunction();
+
+</script>
+    </body>
+</html>

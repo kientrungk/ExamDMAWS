@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+                    border: 0.5px solid blue;
+                    border-collapse: collapse;
+                }
+        </style>
+    </head>
+    <body>
+        
+        <h2 style="color: blue; margin-left: 48px; margin-top: 20px;">THÔNG TIN PHÒNG BAN</h2>
+
+        <table id="mytable" style="border: 1px solid black; margin-left: 50px; margin-top: 20px;">
+            <thead style="background-color: rgb(255, 212, 127);">
+            <tr>
+                <th class="w-25 text-center" style="min-width: 150px;">Tên</th>
+                <th class="w-15 text-center" style="min-width: 100px;">Điện thoại</th>
+                <th class="w-15 text-center" style="min-width: 300px;">Thông tin phòng</th>
+            </tr>
+            </thead>
+    
+           
+        </table>
+
+        
+<script>
+
+    function myFunction() {
+        fetch("http://localhost:8088/api/v1/departments")
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                data.forEach(value => {
+
+                    const dataHtml = `
+                        <tr>
+                            <td>${value.name}</td>
+                            <td>${value.phone}</td>
+                            <td>${value.description}</td>
+                        </tr>
+                    `;
+
+                    document.getElementById('mytable').insertAdjacentHTML('beforeend', dataHtml);
+                });
+
+            })
+    }
+    myFunction();
+
+</script>
+    </body>
+</html>

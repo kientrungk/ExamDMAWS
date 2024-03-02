@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="news">
+			<main class="grid grid-cols-12 pt-4 w-full">
+				<div class="sm:col-span-9 col-span-12 hoidap-box1">
+					<div class="w-full ">
+						<div class="w-full">
+						   
+							<div class="border border-gray-300 p-3 bg-white rounded-xl shadow-xl mt-5">
+								<h3 class="text-base w-full font-bold pb-2 border-b-2 border-gray-200" style="color: red;">
+									SỬA THÔNG TIN ĐƠN HÀNG</h3>
+		
+		
+								<form action="javascript:;" onsubmit="return addEmployee(this)">
+									<div class="grid grid-cols-12 pt-4" style="padding-top: 20px;">    
+										<div class="col-span-6 sm:pr-2 mb-6">
+											<div class="grid grid-cols-12">
+												<div class="col-span-4 flex items-center">
+													<div class="text-base text-gray-600 font-bold">Order ID: </div>
+												</div>
+												<div class="col-span-8">
+													<input v-model="thongtincauhoi.description" type="text" name="orderID" id="" style="border: 1px solid #ab8156;">
+												</div>
+											</div>
+										</div>
+									</div>
+				
+						
+							
+									<div class="grid grid-cols-12 pt-4" style="padding-top: 20px;">    
+										<div class="col-span-6 sm:pr-2 mb-6">
+											<div class="grid grid-cols-12">
+												<div class="col-span-4 flex items-center">
+													<div class="text-base text-gray-600 font-bold">Delivery Time : </div>
+												</div>
+												<div class="col-span-8">
+													<input v-model="thongtincauhoi" type="text" name="time" id="" style="border: 1px solid #ab8156;">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="grid grid-cols-12 pt-4" style="padding-top: 20px;">    
+										<div class="col-span-6 sm:pr-2 mb-6">
+											<div class="grid grid-cols-12">
+												<div class="col-span-4 flex items-center">
+													<div class="text-base text-gray-600 font-bold">Address : </div>
+												</div>
+												<div class="col-span-8">
+													<input v-model="thongtincauhoi.email" type="text" name="address" id="" style="border: 1px solid #ab8156;">
+												</div>
+											</div>
+										</div>
+									</div>
+							
+									<div class="w-full text-right" style="padding-top: 20px; padding-left: 130px;">
+										<button type="submit"
+											class="ml-auto px-3 py-1 rounded-lg text-lg text-white transition  hover:bg-red-600"
+											style="background-color: #ab8156; ">
+											SỬA 
+										</button>
+									</div>
+								</form>
+							</div>
+		
+						</div>
+					</div>
+				</div>
+			</main>
+			
+	
+		</div>
+		
+        <script>
+            function addEmployee(tmp){
+              const url = "https://localhost:7158/api/Orders/update-info/" + tmp.orderID.value;
+			  console.log(url);
+              fetch(url, {
+                method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json' // Định dạng dữ liệu là JSON
+				},
+				body: JSON.stringify({
+					"orderDelivery": tmp.time.value,
+					"orderAddress": tmp.address.value,
+				})
+              });
+          
+             window.location.assign("orders.html");
+          
+            }
+            
+
+          
+          
+          </script>	
+	</body>
+</html>
